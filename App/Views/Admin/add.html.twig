@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() }} - Ajouter un admin{% endblock %}
+
+{% block body %}
+<div class="app-main__inner">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-science icon-gradient bg-happy-itmeo">
+                    </i>
+                </div>
+                <div>Administrateurs
+                    <div class="page-title-subheading">Veuillez remplir le formulaire ci-dessous
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-8 offset-2">
+            <div class="main-card mb-3 card">
+                <div class="card-body"><h5 class="card-title">Ajouter un administrateur</h5>
+                    {{ include ('Admin/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

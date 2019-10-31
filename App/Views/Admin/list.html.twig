@@ -1,0 +1,63 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() }} - Liste des administrateurs{% endblock %}
+
+{% block body %}
+<div class="app-main__inner">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-science icon-gradient bg-happy-itmeo">
+                    </i>
+                </div>
+                <div>Administrateurs
+                    <div class="page-title-subheading">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-body"><h5 class="card-title">Liste des administrateurs</h5>
+
+                        {% if messageError is defined and messageError is not empty %}
+                            <div class="alert alert-danger alert-dismissible">
+                                {{ messageError }}
+                            </div>
+                        {% endif %}
+
+                        <table class="mb-0 table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>Email</th>
+                                <th>Rôle</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for unAdmin in admins %}
+                                <tr>
+                                    <td>{{ unAdmin.COC_ADMIN_nom }}</td>
+                                    <td>{{ unAdmin.COC_ADMIN_prenom }}</td>
+                                    <td>{{ unAdmin.COC_ADMIN_email }}</td>
+                                    <td>{{ unAdmin.COC_ADMIN_correspondant }}</td>
+                                    <td>
+                                        <a data-toggle="tooltip" data-placement="top" title="Modifier" href="http://localhost/TP_PW/public/admin/modifier/{{ unAdmin.COC_ADMIN_id }}"><i class="fas fa-edit"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

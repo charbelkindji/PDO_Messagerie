@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% block title %}Ma Messagerie Par Partenaire Center{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"
+    />
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="http://localhost/TP_PW/public/assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link href="http://localhost/TP_PW/public/main.8d288f825d8dffbbe55e.css" rel="stylesheet"></head>
+    <body>
+
+        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
+            {{ include ('topheader.html.twig') }}
+            <div class="app-main">
+                {{ include ('menu.html.twig') }}
+                <div class="app-main__outer">
+                    {% block body %}
+                    {% endblock %}
+
+
+                    {{ include ('footer.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </body>
+    <div class="app-drawer-overlay d-none animated fadeIn"></div>
+<script type="text/javascript" src="http://localhost/TP_PW/public/assets/scripts/main.8d288f825d8dffbbe55e.js"></script>
+</html>
