@@ -18,18 +18,14 @@
                             </div>
                         </div>
                         <div class="page-title-actions">
-                            <button type="button" data-toggle="tooltip" title="" data-placement="bottom"
-                                    class="btn-shadow mr-3 btn btn-dark" data-original-title="Example Tooltip">
-                                <i class="fa fa-star"></i>
-                            </button>
+                            {#<button type="button" data-toggle="tooltip" title="" data-placement="bottom"#}
+                                    {#class="btn-shadow mr-3 btn btn-dark" data-original-title="Example Tooltip">#}
+                                {#<i class="fa fa-star"></i>#}
+                            {#</button>#}
                             <div class="d-inline-block dropdown">
-                                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        class="btn-shadow dropdown-toggle btn btn-info">
-                                                                    <span class="btn-icon-wrapper pr-2 opacity-7">
-                                                                        <i class="fa fa-business-time fa-w-20"></i>
-                                                                    </span>
-                                    Buttons
-                                </button>
+                                <a href="http://localhost/PDO_Messagerie/public/client/liste"><button type="button" class="btn btn-primary">
+                                    Liste des clients
+                                </button></a>
                             </div>
                         </div>
                     </div>
@@ -64,7 +60,7 @@
                                             <span class="opacity-7 mr-1">
                                                 <i class="fa fa-cog"></i>
                                             </span>
-                                    A venir
+                                    {#A venir#}
                                     </button>
                                 </div>
                             </div>
@@ -178,6 +174,6 @@
     {% set idexp = idAdmin %}
     {% set typeexp = "ADMIN" %}
     {% set typedest = "CLIENT" %}
-    {% set iddest =  supportClient[0].COC_CLIENT_id %}
+    {% set iddest =  idClient %}
     {{ include ('Support/sendAndReceiveMsg.html.twig') }}
 {% endblock %}

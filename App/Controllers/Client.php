@@ -41,7 +41,9 @@ class Client extends \Core\Controller
 
     public function listeAction()
     {
-        // Eventuelles erreurs à afficher des suites d'un header depuis une autre page
+//        var_dump($_SESSION['idAdmin']);
+//        die();
+        // Event    uelles erreurs à afficher des suites d'un header depuis une autre page
         $error = isset($_SESSION['error']) ? $_SESSION['error'] :  "";
         unset($_SESSION['error']);
         View::renderTemplate('Client/list.html.twig', array(
@@ -50,6 +52,10 @@ class Client extends \Core\Controller
             'prenomConnected' => $_SESSION['prenom'],
             'nomComConnected' => "",
             'connected' => true, // pour afficher menu et header
+
+            // Pour afficher le bon menu (admin ou client)
+            'menu' => 'admin',
+
             'clients' => ClientModel::getAll(),
             'messageError' => $error
         ));
@@ -279,6 +285,10 @@ class Client extends \Core\Controller
             'prenomConnected' => $_SESSION['prenom'],
             'nomComConnected' => $_SESSION['nomcom'],
             'connected' => true, // pour afficher menu et header
+
+            // Pour afficher le bon menu (admin ou client)
+            'menu' => 'client',
+
             'admins' => AdminModel::getAll(),
         ));
     }

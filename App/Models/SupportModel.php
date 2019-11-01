@@ -188,8 +188,8 @@ class SupportModel extends \Core\Model
 
         // todo remove
         // Définir valeur en dur pour les tests des échanges
-        $idAdmin = 1;
-        $idClient = 6;
+//        $idAdmin = 1;
+//        $idClient = 6;
 //        var_dump($idAdmin);
 //        var_dump($idClient);
 

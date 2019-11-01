@@ -111,15 +111,22 @@ class Admin extends \Core\Controller
     {
         // Eventuelles erreurs à afficher des suites d'un header depuis une autre page
         $error = isset($_SESSION['error']) ? $_SESSION['error'] :  "";
+        $messageSucces = isset($_SESSION['succes']) ? $_SESSION['succes'] :  "";
         unset($_SESSION['error']);
+        unset($_SESSION['succes']);
         View::renderTemplate('Admin/list.html.twig', array(
             // Pour afficher les infos dans le header
             'nomConnected' => $_SESSION['nom'],
             'prenomConnected' => $_SESSION['prenom'],
 //            'nomComConnected' => $_SESSION['nomcom'],
             'connected' => true, // pour afficher menu et header
+
+            // Pour afficher le bon menu (admin ou client)
+            'menu' => 'admin',
+
             'admins' => AdminModel::getAll(),
-            'messageError' => $error
+            'messageError' => $error,
+            'messageSucces' => $messageSucces,
         ));
     }
 
@@ -162,6 +169,10 @@ class Admin extends \Core\Controller
                         'prenomConnected' => $_SESSION['prenom'],
                         'nomComConnected' => $_SESSION['nomcom'],
                         'connected' => true, // pour afficher menu et header
+
+                        // Pour afficher le bon menu (admin ou client)
+                        'menu' => 'admin',
+
                         'admin' => $admin,
                         'error' => 'Une erreur est survenue lors de l\'enregistrement. Veuillez réessayer.'
                     ));
@@ -179,6 +190,10 @@ class Admin extends \Core\Controller
             'prenomConnected' => $_SESSION['prenom'],
 //            'nomComConnected' => $_SESSION['nomcom'],
             'connected' => true, // pour afficher menu et header
+
+            // Pour afficher le bon menu (admin ou client)
+            'menu' => 'admin',
+
             'admin' => $admin,
             'messageSucces' => $succes,
             'errors' => $errors
@@ -231,6 +246,10 @@ class Admin extends \Core\Controller
                         'prenomConnected' => $_SESSION['prenom'],
                         'nomComConnected' => $_SESSION['nomcom'],
                         'connected' => true, // pour afficher menu et header
+
+                        // Pour afficher le bon menu (admin ou client)
+                        'menu' => 'admin',
+
                         'admin' => $admin,
                         'error' => 'Une erreur est survenue lors de l\'enregistrement. Veuillez réessayer.'
                     ));
@@ -243,8 +262,12 @@ class Admin extends \Core\Controller
                 // Pour afficher les infos dans le header
                 'nomConnected' => $_SESSION['nom'],
                 'prenomConnected' => $_SESSION['prenom'],
-                'nomComConnected' => $_SESSION['nomcom'],
+//                'nomComConnected' => $_SESSION['nomcom'],
                 'connected' => true, // pour afficher menu et header
+
+                // Pour afficher le bon menu (admin ou client)
+                'menu' => 'admin',
+
                 'admin' => $admin,
                 'errors' => $errors,
                 'editForm' => true,
@@ -267,6 +290,7 @@ class Admin extends \Core\Controller
                 $adminDB->setMotdepasse($resultat['COC_ADMIN_motdepasse']);
                 $adminDB->setCorrespondant($resultat['COC_ADMIN_correspondant']);
 
+//                var_dump($adminDB);
                 if($adminDB == null)
                 {
                     $_SESSION['error'] = "Administrateur introuvable. Veuillez rééssayer.";
@@ -277,17 +301,21 @@ class Admin extends \Core\Controller
                 /* @var AdminModel $_SESSION['adminEdit']*/
                 $_SESSION['adminEdit'] = $adminDB;
 
-//                var_dump($adminDB);
-//                exit(0);
 
             }
+//            var_dump($adminDB);
+//            exit(0);
 
             View::renderTemplate('Admin/edit.html.twig', array(
                 // Pour afficher les infos dans le header
                 'nomConnected' => $_SESSION['nom'],
                 'prenomConnected' => $_SESSION['prenom'],
-                'nomComConnected' => $_SESSION['nomcom'],
+//                'nomComConnected' => $_SESSION['nomcom'],
                 'connected' => true, // pour afficher menu et header
+
+                // Pour afficher le bon menu (admin ou client)
+                'menu' => 'admin',
+
                 'admin' => $adminDB,
                 'errors' => $errors,
                 'editForm' => true,

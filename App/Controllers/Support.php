@@ -8,6 +8,7 @@ if(!isset($_SESSION))
 
 use App\Models\ClientModel;
 use App\Models\SupportModel;
+use App\Models\AdminModel;
 use \Core\View;
 
 /**
@@ -42,6 +43,16 @@ class Support extends \Core\Controller
 //        var_dump($messages);
 //        die();
 
+        // Si messages est vide, récupérer au moins le nom du client pour l'afficher dans l'entête de la messagerie
+        $nomAdmin = "";
+        if(empty($messages))
+        {
+            $nomAdmin = AdminModel::getAdminName($idAdmin);
+        }else
+        {
+            $nomAdmin = $messages[0]['COC_ADMIN_nom'] . " " . $messages[0]['COC_ADMIN_prenom'];
+        }
+
         View::renderTemplate('Support/support.html.twig', array(
             // Pour afficher les infos dans le header
             'nomConnected' => $_SESSION['nom'],
@@ -49,9 +60,13 @@ class Support extends \Core\Controller
             'nomComConnected' => $_SESSION['nomcom'],
             'connected' => true, // pour afficher menu et header
 
+            // Pour afficher le bon menu (admin ou client)
+            'menu' => 'client',
+
             'supportClient' => $messages,
-            'nomAdmin' => $messages != null ? $messages[0]['COC_ADMIN_nom'] . " " . $messages[0]['COC_ADMIN_prenom'] : "",
+            'nomAdmin' => $nomAdmin,
             'idClient' => $_SESSION['idClient'],
+            'idAdmin' => $idAdmin,
 
         ));
     }
@@ -65,7 +80,7 @@ class Support extends \Core\Controller
         $idClient = $uri[count($uri)-1];
 
         $support = new SupportModel();
-        $messages = $support->getSupportMessagesAdmin($idClient, $_SESSION['idAdmin']);
+        $messages = $support->getSupportMessagesAdmin($_SESSION['idAdmin'], $idClient);
 
 //        var_dump($messages);
 //        die();
@@ -88,15 +103,22 @@ class Support extends \Core\Controller
             'nomComConnected' => "",
             'connected' => true, // pour afficher menu et header
 
+            // Pour afficher le bon menu (admin ou client)
+            'menu' => 'admin',
+
             'supportClient' => $messages,
             'nomClient' => $nomClient,
-//todo remove
-//            'idAdmin' => $_SESSION['idAdmin'],
-            'idAdmin' => 1,
+            'idAdmin' => $_SESSION['idAdmin'],
+            'idClient' => $idClient,
+//            'idAdmin' => 1,
 
         ));
     }
 
+
+    /**
+     * Gère la réception des messages venant d'un client ou d'un admin et appelle la fonction pour faire l'enregistrement dans la bdd
+     */
     public function processMessageAction()
     {
         // Insertion dans la bd
@@ -112,7 +134,10 @@ class Support extends \Core\Controller
         $support->setTypedesti($_POST['typedest']);
         $support->setTypeexp($_POST['typeexp']);
 
+//        var_dump($support);
+//        die();
         $support->insertMessage();
+
 
         $data = array(
             "message" => $_POST['message'],

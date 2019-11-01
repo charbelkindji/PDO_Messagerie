@@ -40,7 +40,7 @@
 
 
             <!-- deb log-->
-            {% if nomConnected is defined and prenomConnected is defined and nomComConnected is defined %}
+            {% if nomConnected is defined and prenomConnected is defined %}
 
             <div class="header-btn-lg pr-0">
                 <div class="widget-content p-0">
@@ -48,7 +48,7 @@
                         <div class="widget-content-left">
                             <div class="btn-group">
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="assets/images/avatars/0.jpg" alt="">
+                                    <img width="42" class="rounded-circle" src="assets/images/avatars/avatar.png" alt="">
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true"
@@ -62,7 +62,7 @@
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left mr-3">
                                                                 <img width="42" class="rounded-circle"
-                                                                     src="assets/images/avatars/0.jpg"
+                                                                     src="assets/images/avatars/avatar.png"
                                                                      alt="">
                                                             </div>
                                                             <div class="widget-content-left">
@@ -73,7 +73,11 @@
                                                             </div>
                                                             <div class="widget-content-right mr-2">
                                                                 <button class="btn-pill btn-shadow btn-shine btn btn-focus">
-                                                                    <a href="http://localhost/PDO_Messagerie/public/client/deconnexion"<font style="color: #ffffff;">Déconnexion</a></font>
+                                                                    {% if menu == 'client' %}
+                                                                        <a href="http://localhost/PDO_Messagerie/public/client/deconnexion"<font style="color: #ffffff;">Déconnexion</a></font>
+                                                                    {% else %}
+                                                                        <a href="http://localhost/PDO_Messagerie/public/admin/deconnexion"<font style="color: #ffffff;">Déconnexion</a></font>
+                                                                    {% endif %}
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -89,7 +93,7 @@
 
 
                                                 <li class="nav-item">
-                                                    <a href="moncompte.php" class="nav-link">Mon profil
+                                                    <a href="#" class="nav-link">Mon profil
                                                     </a>
                                                 </li>
                                                 <li class="nav-item-header nav-item">Messagerie
@@ -120,14 +124,16 @@
                                         <div class="no-gutters row">
                                             <div class="col-sm-6">
                                                 <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning"
-                                                        onclick="document.location.href='correspondances.php'">
+                                                        {#onclick="document.location.href='correspondances.php'#}
+                                                         ">
                                                     <i class="pe-7s-chat icon-gradient bg-amy-crisp btn-icon-wrapper mb-2"></i>
                                                     Messages de mes collaborateurs
                                                 </button>
                                             </div>
                                             <div class="col-sm-6">
                                                 <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger"
-                                                        onclick="document.location.href='support.php'">
+                                                        {#onclick="document.location.href='support.php' #}
+                                                            ">
                                                     <i class="pe-7s-ticket icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
                                                     <b>Messages de mon partenaire</b>
                                                 </button>
@@ -139,7 +145,8 @@
                                         </li>
                                         <li class="nav-item-btn text-center nav-item">
                                             <button class="btn-wide btn btn-primary btn-sm"
-                                                    onclick="document.location.href='correspondances.php'">
+                                                    {#onclick="document.location.href='correspondances.php'#}
+                                                        ">
                                                 Lire mes Messages
                                             </button>
                                         </li>
@@ -152,7 +159,9 @@
                                     {{ nomConnected ~ " " ~ prenomConnected }}
                                 </div>
                                 <div class="widget-subheading">
-                                    {{ nomComConnected }}
+                                    {% if nomComConnected is defined %}
+                                        {{ nomComConnected }}
+                                    {% endif %}
                                 </div>
                             </div>
 

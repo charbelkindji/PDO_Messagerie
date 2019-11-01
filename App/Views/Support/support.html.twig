@@ -19,18 +19,18 @@
                             </div>
                         </div>
                         <div class="page-title-actions">
-                            <button type="button" data-toggle="tooltip" title="" data-placement="bottom"
-                                    class="btn-shadow mr-3 btn btn-dark" data-original-title="Example Tooltip">
-                                <i class="fa fa-star"></i>
-                            </button>
+                            {#<button type="button" data-toggle="tooltip" title="" data-placement="bottom"#}
+                                    {#class="btn-shadow mr-3 btn btn-dark" data-original-title="Example Tooltip">#}
+                                {#<i class="fa fa-star"></i>#}
+                            {#</button>#}
                             <div class="d-inline-block dropdown">
-                                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        class="btn-shadow dropdown-toggle btn btn-info">
-                                                                    <span class="btn-icon-wrapper pr-2 opacity-7">
-                                                                        <i class="fa fa-business-time fa-w-20"></i>
-                                                                    </span>
-                                    Buttons
-                                </button>
+                                {#<button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"#}
+                                        {#class="btn-shadow dropdown-toggle btn btn-info">#}
+                                                                    {#<span class="btn-icon-wrapper pr-2 opacity-7">#}
+                                                                        {#<i class="fa fa-business-time fa-w-20"></i>#}
+                                                                    {#</span>#}
+                                    {#Buttons#}
+                                {#</button>#}
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                 <div class="avatar-icon-wrapper mr-2">
                                     <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
                                     <div class="avatar-icon avatar-icon-xl rounded"><img width="82"
-                                                                                         src="http://localhost/PDO_Messagerie/public/assets/images/avatars/1.jpg"
+                                                                                         src="http://localhost/PDO_Messagerie/public/assets/images/avatars/avatar.png"
                                                                                          alt=""></div>
                                 </div>
                                 <h4 class="mb-0 text-nowrap">{{ nomAdmin }}
@@ -65,13 +65,12 @@
                                             <span class="opacity-7 mr-1">
                                                 <i class="fa fa-cog"></i>
                                             </span>
-                                    A venir
+                                    {#A venir#}
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div id="chat-wrapper" class="chat-wrapper">
-
                         {% for message in supportClient %}
 
                                 {#Pour disposer les messages correctement#}
@@ -82,7 +81,7 @@
                                                 <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
                                                 <div class="avatar-icon avatar-icon-lg rounded">
                                                     <img
-                                                            src="http://localhost/PDO_Messagerie/public/assets/images/avatars/4.jpg"
+                                                            src="http://localhost/PDO_Messagerie/public/assets/images/avatars/avatar.png"
                                                             alt=""></div>
                                             </div>
                                         </div>
@@ -109,7 +108,7 @@
                                                 <div class="avatar-icon-wrapper ml-1">
                                                     <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
                                                     <div class="avatar-icon avatar-icon-lg rounded"><img
-                                                                src="http://localhost/PDO_Messagerie/public/assets/images/avatars/3.jpg"
+                                                                src="http://localhost/PDO_Messagerie/public/assets/images/avatars/avatar.png"
                                                                 alt=""></div>
                                                 </div>
                                             </div>
@@ -157,7 +156,7 @@
                                             <div class="avatar-icon-wrapper">
                                                 <div class="badge badge-bottom badge-success badge-dot badge-dot-lg"></div>
                                                 <div class="avatar-icon"><img
-                                                            src="http://localhost/PDO_Messagerie/public/assets/images/avatars/4.jpg"
+                                                            src="http://localhost/PDO_Messagerie/public/assets/images/avatars/avatar.png"
                                                             alt=""></div>
                                             </div>
                                         </div>
@@ -183,7 +182,7 @@
     {% set idexp = idClient %}
     {% set typeexp = "CLIENT" %}
     {% set typedest = "ADMIN" %}
-    {% set iddest =  supportClient[0].COC_ADMIN_id %}
+    {% set iddest =  idAdmin %}
     {{ include ('Support/sendAndReceiveMsg.html.twig') }}
 
 {% endblock %}

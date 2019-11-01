@@ -206,4 +206,23 @@ class AdminModel extends \Core\Model
         return $stmt->fetch();
     }
 
+
+    /**
+     * Get admin name based on id
+     */
+    public static function getAdminName($id)
+    {
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT COC_ADMIN_nom, COC_ADMIN_prenom FROM coc_admin WHERE COC_ADMIN_id = :id");
+
+        $stmt->bindValue(":id", $id);
+
+        $stmt->execute();
+
+        $result = $stmt->fetch();
+
+        return $result['COC_ADMIN_nom'] . " " . $result['COC_ADMIN_prenom'];
+    }
+
+
 }

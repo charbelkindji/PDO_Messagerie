@@ -255,7 +255,7 @@ class ClientModel extends \Core\Model
     }
 
     /**
-     * Get client based on id
+     * Get client name based on id
      */
     public static function getClientName($id)
     {

@@ -22,7 +22,11 @@
             {{ include ('topheader.html.twig') }}
             <div class="app-main">
                 {% if connected is defined and connected == true %}
-                    {{ include ('menu.html.twig') }}
+                    {% if menu == 'client' %}
+                        {{ include ('menuClient.html.twig') }}
+                    {% else %}
+                        {{ include ('menuAdmin.html.twig') }}
+                    {% endif %}
                 {% endif %}
                 <div class="app-main__outer">
                     {% block body %}
