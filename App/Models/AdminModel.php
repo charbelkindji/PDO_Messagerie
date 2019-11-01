@@ -141,7 +141,7 @@ class AdminModel extends \Core\Model
              'nom' => $this->nom,
              'prenom' => $this->prenom,
              'email' => $this->email,
-             'motdepasse' => $this->motdepasse,
+             'motdepasse' => sha1($this->motdepasse),
              'statut' => $this->statut,
              'correspondant' => $this->correspondant,
         ));
@@ -167,7 +167,7 @@ class AdminModel extends \Core\Model
              'nom' => $this->nom,
              'prenom' => $this->prenom,
              'email' => $this->email,
-             'motdepasse' => $this->motdepasse,
+             'motdepasse' => sha1($this->motdepasse),
              'statut' => $this->statut,
              'correspondant' => $this->correspondant,
         ));
@@ -187,4 +187,23 @@ class AdminModel extends \Core\Model
 
         return $stmt->fetch();
     }
+
+    /**
+     * Get admin based on id
+     */
+    public function connexion()
+    {
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT * FROM coc_admin WHERE COC_ADMIN_email = :email AND COC_ADMIN_motdepasse = :motdepasse");
+
+//        var_dump(sha1($this->motdepasse));
+//        var_dump($this->email);
+        $stmt->execute(array(
+            'email' => $this->email,
+            'motdepasse' => sha1($this->motdepasse),
+        ));
+
+        return $stmt->fetch();
+    }
+
 }

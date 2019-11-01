@@ -7,6 +7,8 @@ if(!isset($_SESSION))
 
 use \Core\View;
 use App\Models\ClientModel;
+use App\Models\AdminModel;
+
 /**
  * Client controller
  *
@@ -17,17 +19,49 @@ class Client extends \Core\Controller
     const MIN_LENGTH_NOM_PRENOM = 4;
     const MIN_LENGTH_PASSWORD = 6;
 
+
     /**
      * Avant chaque action, vérifier que l'utilisateur est connecté
      */
     protected function before()
     {
+        // Si c'est un admin, on ne le redirige pas vers la page de connexion client.
+        // L'admin a accès a la page de la liste des client sans devoir se connecter en tant que client
+        if(isset($_SESSION['idAdmin']))
+            return;
+
         //Vérifier que l'utilisateur est connecté
-        if(!isset($_SESSION['connected']))
+        if(!isset($_SESSION['idClient']))
         {
             $this->connexionAction();
             return false;
         }
+    }
+
+
+    public function listeAction()
+    {
+        // Eventuelles erreurs à afficher des suites d'un header depuis une autre page
+        $error = isset($_SESSION['error']) ? $_SESSION['error'] :  "";
+        unset($_SESSION['error']);
+        View::renderTemplate('Client/list.html.twig', array(
+            // Pour afficher les infos dans le header
+            'nomConnected' => $_SESSION['nom'],
+            'prenomConnected' => $_SESSION['prenom'],
+            'nomComConnected' => "",
+            'connected' => true, // pour afficher menu et header
+            'clients' => ClientModel::getAll(),
+            'messageError' => $error
+        ));
+    }
+
+    /**
+     * Gère la déconnexion
+     */
+    public function deconnexionAction()
+    {
+        session_destroy();
+        $this->connexionAction();
     }
 
 
@@ -36,6 +70,13 @@ class Client extends \Core\Controller
      */
     public function connexionAction()
     {
+        // S'il est déjà connecté
+        if(isset($_SESSION['idClient']))
+        {
+            header('Location: http://localhost/PDO_Messagerie/public/admin/contact');
+            return false;
+        }
+
         // Eventuel message de succès à afficher des suites de l'inscription
         $messageSucces = isset($_SESSION['succes']) ? $_SESSION['succes'] :  "";
 
@@ -58,23 +99,23 @@ class Client extends \Core\Controller
             {
                 // Stocker les informations du client connecté dans la session
                 $_SESSION['connected'] = true;
-                $_SESSION['nom'] = $client->getNom();
-                $_SESSION['prenom'] = $client->getPrenom();
-                $_SESSION['email'] = $client->getEmail();
-                $_SESSION['motdepasse'] = $client->getMotdepasse();
+                $_SESSION['idClient'] = $resultat['COC_CLIENT_id'];
+                $_SESSION['nom'] = $resultat['COC_CLIENT_nom'];
+                $_SESSION['prenom'] = $resultat['COC_CLIENT_prenom'];
+                $_SESSION['email'] = $resultat['COC_CLIENT_email'];
+                $_SESSION['motdepasse'] = $resultat['COC_CLIENT_motdepasse'];
 //                $_SESSION['statut'] = $client->getStatut();
-                $_SESSION['nomcom'] = $client->getNomcom();
-                $_SESSION['tel'] = $client->getTel();
-                $_SESSION['adresse'] = $client->getAdresse();
-                $_SESSION['cp'] = $client->getCp();
-                $_SESSION['ville'] = $client->getVille();
+                $_SESSION['nomcom'] = $resultat['COC_CLIENT_nomcom'];
+                $_SESSION['tel'] = $resultat['COC_CLIENT_tel'];
+                $_SESSION['adresse'] = $resultat['COC_CLIENT_adresse'];
+                $_SESSION['cp'] = $resultat['COC_CLIENT_cp'];
+                $_SESSION['ville'] = $resultat['COC_CLIENT_ville'];
 
                 // Rediriger vers la page de contact
-                header('Location: http://localhost/PDO_Messagerie/public/admin/contact');
+                header('Location: http://localhost/PDO_Messagerie/public/contact');
             }else
             {
                 View::renderTemplate('Client/connexion.html.twig', array(
-                    'messageSucces' => $messageSucces,
                     'error' => 'Email ou mot de passe incorrect.',
                 ));
                 return;
@@ -223,5 +264,26 @@ class Client extends \Core\Controller
 
         return $errors;
     }
+
+
+    /**
+     * Show the contact page
+     *
+     * @return void
+     */
+    public function contactAction()
+    {
+        View::renderTemplate('Client/contact.html.twig', array(
+            // Pour afficher les infos dans le header
+            'nomConnected' => $_SESSION['nom'],
+            'prenomConnected' => $_SESSION['prenom'],
+            'nomComConnected' => $_SESSION['nomcom'],
+            'connected' => true, // pour afficher menu et header
+            'admins' => AdminModel::getAll(),
+        ));
+    }
+
+
+
 
 }

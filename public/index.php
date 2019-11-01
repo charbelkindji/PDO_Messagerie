@@ -31,13 +31,22 @@ $router->add('{controller}/{action}');
 
 // AdminModel
 $router->add('admin/ajouter', ['controller' => 'Admin', 'action' => 'ajouter']);
+$router->add('admin/connexion', ['controller' => 'Admin', 'action' => 'connexion']);
 $router->add('admin/index');
 $router->add('admin/modifier/{id:\d+}', ['controller' => 'Admin', 'action' => 'modifier']);
-$router->add('contact', ['controller' => 'Admin', 'action' => 'index']);
+$router->add('contact', ['controller' => 'Client', 'action' => 'contact']);
 
 // Client
+$router->add('client/liste', ['controller' => 'Client', 'action' => 'index']);
 $router->add('client/ajouter', ['controller' => 'Client', 'action' => 'ajouter']);
 $router->add('client/connexion', ['controller' => 'Client', 'action' => 'connexion']);
+$router->add('client/deconnexion', ['controller' => 'Client', 'action' => 'deconnexion']);
+
+// Support
+$router->add('support/{id:\d+}', ['controller' => 'Support', 'action' => 'support']);
+$router->add('admin/support/{id:\d+}', ['controller' => 'Support', 'action' => 'supportAdmin']);
+$router->add('support/processMessage', ['controller' => 'Support', 'action' => 'processMessage']);
+$router->add('support/newMessages', ['controller' => 'Support', 'action' => 'newMessages']);
 
 
 $router->dispatch($_SERVER['QUERY_STRING']);

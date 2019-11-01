@@ -38,9 +38,7 @@
                                     <div><h5 class="menu-header-title">{{ unAdmin.COC_ADMIN_nom ~ " " ~ unAdmin.COC_ADMIN_prenom }}</h5><h6 class="menu-header-subtitle">
                                             {{ unAdmin.COC_ADMIN_correspondant }}</h6></div>
                                     <div class="menu-header-btn-pane pt-1">
-                                        <button class="btn-icon btn btn-warning btn-sm"
-                                                onclick="document.location.href='support.php'">Envoyer un message
-                                        </button>
+                                        <a href="http://localhost/PDO_Messagerie/public/support/{{ unAdmin.COC_ADMIN_id }}"><button class="btn-icon btn btn-warning btn-sm">Envoyer un message</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -126,14 +124,8 @@
                     </div>
                 </div>
             {% endfor %}
-
-
-
-
             </div>
         </div>
 
-
-    </div>
 
 {% endblock %}

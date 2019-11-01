@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{ parent() }} - Liste des administrateurs{% endblock %}
+{% block title %}{{ parent() }} - Liste des clients{% endblock %}
 
 {% block body %}
 <div class="app-main__inner">
@@ -11,7 +11,7 @@
                     <i class="pe-7s-science icon-gradient bg-happy-itmeo">
                     </i>
                 </div>
-                <div>Administrateurs
+                <div>Clients
                     <div class="page-title-subheading">
                     </div>
                 </div>
@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-body"><h5 class="card-title">Liste des administrateurs</h5>
+                    <div class="card-body"><h5 class="card-title">Liste des clients</h5>
 
                         {% if messageError is defined and messageError is not empty %}
                             <div class="alert alert-danger alert-dismissible">
@@ -37,19 +37,17 @@
                                 <th>Nom</th>
                                 <th>Prénom</th>
                                 <th>Email</th>
-                                <th>Rôle</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for unAdmin in admins %}
+                            {% for unClient in clients %}
                                 <tr>
-                                    <td>{{ unAdmin.COC_ADMIN_nom }}</td>
-                                    <td>{{ unAdmin.COC_ADMIN_prenom }}</td>
-                                    <td>{{ unAdmin.COC_ADMIN_email }}</td>
-                                    <td>{{ unAdmin.COC_ADMIN_correspondant }}</td>
+                                    <td>{{ unClient.COC_CLIENT_nom }}</td>
+                                    <td>{{ unClient.COC_CLIENT_prenom }}</td>
+                                    <td>{{ unClient.COC_CLIENT_email }}</td>
                                     <td>
-                                        <a data-toggle="tooltip" data-placement="top" title="Modifier" href="http://localhost/PDO_Messagerie/public/admin/modifier/{{ unAdmin.COC_ADMIN_id }}"><i class="fas fa-edit"></i></a>
+                                        <a data-toggle="tooltip" data-placement="top" title="Accéder à la messagerie" href="http://localhost/PDO_Messagerie/public/admin/support/{{ unClient.COC_CLIENT_id }}"><i class="fas fa-mail-bulk"></i></a>
                                     </td>
                                 </tr>
                             {% endfor %}

@@ -223,6 +223,19 @@ class ClientModel extends \Core\Model
         ));
     }
 
+
+    /**
+     * Get all the admins as an associative array
+     *
+     * @return array
+     */
+    public static function getAll()
+    {
+        $db = static::getDB();
+        $stmt = $db->query('SELECT * FROM coc_client');
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     /**
      * Get admin based on id
      */
@@ -242,15 +255,22 @@ class ClientModel extends \Core\Model
     }
 
     /**
-     * Hasher le mot de passe et retourner le résultat hashé.
+     * Get client based on id
      */
-    public function hashPassword()
+    public static function getClientName($id)
     {
-        // hash password
-        $password = password_hash($this->getMotdepasse(), PASSWORD_BCRYPT, self::PASSWORD_HASH_OPTIONS);
-        $password = substr($password, 0, 45); // PASSWORD_BCRYPT produit une chaine de 60 caractère et nous ne stockons que 45 dans la bdd
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT COC_CLIENT_nom, COC_CLIENT_prenom FROM coc_client WHERE COC_CLIENT_id = :id");
 
-        return $password;
+        $stmt->bindValue(":id", $id);
+
+        $stmt->execute();
+
+        $result = $stmt->fetch();
+
+        return $result['COC_CLIENT_nom'] . " " . $result['COC_CLIENT_prenom'];
     }
+
+
 
 }

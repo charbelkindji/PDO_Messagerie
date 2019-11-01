@@ -18,6 +18,90 @@ class Admin extends \Core\Controller
     const MIN_LENGTH_NOM_PRENOM = 4;
     const MIN_LENGTH_PASSWORD = 6;
     const ROLES = array('PLANIFICATION', 'FACTURATION', 'SUPPORT');
+
+
+    /**
+     * Avant chaque action, vérifier que l'utilisateur est connecté
+     */
+    protected function before()
+    {
+        //Vérifier que l'utilisateur est connecté
+        if(!isset($_SESSION['idAdmin']))
+        {
+            $this->connexionAction();
+            return false;
+        }
+    }
+
+    /**
+     * Gère la déconnexion
+     */
+    public function deconnexionAction()
+    {
+        session_destroy();
+        $this->connexionAction();
+    }
+
+
+    /**
+     * Gère la connexion des admins
+     */
+    public function connexionAction()
+    {
+        // S'il est déjà connecté
+        if(isset($_SESSION['idAdmin']))
+        {
+            header('Location: http://localhost/PDO_Messagerie/public/admin/contact');
+            return false;
+        }
+
+        // Eventuel message de succès à afficher des suites de l'inscription
+        $messageSucces = isset($_SESSION['succes']) ? $_SESSION['succes'] :  "";
+
+        // formulaire soumis
+        if(!empty($_POST))
+        {
+            $admin = new AdminModel();
+
+            $admin->setEmail($_POST['email']);
+            $admin->setMotdepasse($_POST['motdepasse']);
+
+            // Vérifier si utilisateur existe et si les infos correspondent.
+            /** @var AdminModel $admin */
+            $resultat = $admin->connexion();
+
+//            var_dump($resultat);
+//            var_dump(sha1($admin->getMotdepasse()));
+//            die();
+            if($resultat != null)
+            {
+                // Stocker les informations du client connecté dans la session
+                $_SESSION['connected'] = true;
+                $_SESSION['idAdmin'] = $resultat['COC_ADMIN_id'];
+                $_SESSION['nom'] = $resultat['COC_ADMIN_nom'];
+                $_SESSION['prenom'] = $resultat['COC_ADMIN_prenom'];
+                $_SESSION['email'] = $resultat['COC_ADMIN_email'];
+                $_SESSION['motdepasse'] = $resultat['COC_ADMIN_motdepasse'];
+//                $_SESSION['statut'] = $admin->getStatut();
+                $_SESSION['correspondant'] = $resultat['COC_ADMIN_correspondant'];
+
+                // Rediriger vers la page de contact
+                header('Location: http://localhost/PDO_Messagerie/public/client/liste');
+            }else
+            {
+                View::renderTemplate('Admin/connexion.html.twig', array(
+                    'error' => 'Email ou mot de passe incorrect.',
+                ));
+                return;
+            }
+
+        }
+
+        View::renderTemplate('Admin/connexion.html.twig', array(
+            'messageSucces' => $messageSucces,
+        ));
+    }
+
     /**
      * Show the list of admins page
      *
@@ -32,27 +116,10 @@ class Admin extends \Core\Controller
             // Pour afficher les infos dans le header
             'nomConnected' => $_SESSION['nom'],
             'prenomConnected' => $_SESSION['prenom'],
-            'nomComConnected' => $_SESSION['nomcom'],
+//            'nomComConnected' => $_SESSION['nomcom'],
             'connected' => true, // pour afficher menu et header
             'admins' => AdminModel::getAll(),
             'messageError' => $error
-        ));
-    }
-
-    /**
-     * Show the contact page
-     *
-     * @return void
-     */
-    public function contactAction()
-    {
-        View::renderTemplate('Admin/contact.html.twig', array(
-            // Pour afficher les infos dans le header
-            'nomConnected' => $_SESSION['nom'],
-            'prenomConnected' => $_SESSION['prenom'],
-            'nomComConnected' => $_SESSION['nomcom'],
-            'connected' => true, // pour afficher menu et header
-            'admins' => AdminModel::getAll(),
         ));
     }
 
@@ -110,7 +177,7 @@ class Admin extends \Core\Controller
             // Pour afficher les infos dans le header
             'nomConnected' => $_SESSION['nom'],
             'prenomConnected' => $_SESSION['prenom'],
-            'nomComConnected' => $_SESSION['nomcom'],
+//            'nomComConnected' => $_SESSION['nomcom'],
             'connected' => true, // pour afficher menu et header
             'admin' => $admin,
             'messageSucces' => $succes,
