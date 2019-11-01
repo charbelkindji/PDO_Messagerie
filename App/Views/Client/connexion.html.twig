@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() }} - Connectez-vous{% endblock %}
+
+{% block body %}
+<div class="app-main__inner">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-science icon-gradient bg-happy-itmeo">
+                    </i>
+                </div>
+                <div>Clients
+                    <div class="page-title-subheading">Veuillez remplir le formulaire ci-dessous pour vous connecter
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-8 offset-2">
+            <div class="main-card mb-3 card">
+                <div class="card-body"><h5 class="card-title">Connexion</h5>
+                    {% if error is defined and error is not empty %}
+                        <div class="alert alert-danger alert-dismissible">
+                            {{ error }}
+                        </div>
+                    {% endif %}
+
+                    {#Message de succès éventuel après l'inscription ) afficher#}
+                    {% if messageSucces is defined and messageSucces is not empty %}
+                        <div class="alert alert-success alert-dismissible">
+                            {{ messageSucces }}
+                        </div>
+                    {% endif %}
+
+                    <form class="" method="post">
+                        <div class="position-relative form-group">
+                            <label for="email" class="">Email</label>
+                            <input name="email" value="abcd@gmail.com" id="email" placeholder="Ex : nom.prenom@parter.com" type="email" class="form-control">
+                            {#<input name="email" {% if editForm is defined %}{{ "read-only" }}{% endif %} value="{% if client.email is not empty %}{{ client.email }}{% endif %}" id="email" placeholder="Ex : nom.prenom@parter.com" type="email" class="form-control">#}
+                        </div>
+                        <div class="position-relative form-group">
+                            <label for="motdepasse" class="">Mot de passe</label>
+                            <input name="motdepasse" value="{% if client.motdepasse is not empty %}{{ client.motdepasse }}{% endif %}" id="motdepasse" placeholder="Mot de passe" type="password" class="form-control">
+                        </div>
+                        <button class="mt-1 btn btn-primary">Connexion</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

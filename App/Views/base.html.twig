@@ -13,15 +13,17 @@
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
-    <link rel="stylesheet" href="http://localhost/TP_PW/public/assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://localhost/PDO_Messagerie/public/assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <link href="http://localhost/TP_PW/public/main.8d288f825d8dffbbe55e.css" rel="stylesheet"></head>
+    <link href="http://localhost/PDO_Messagerie/public/main.8d288f825d8dffbbe55e.css" rel="stylesheet"></head>
     <body>
 
         <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
             {{ include ('topheader.html.twig') }}
             <div class="app-main">
-                {{ include ('menu.html.twig') }}
+                {% if connected is defined and connected == true %}
+                    {{ include ('menu.html.twig') }}
+                {% endif %}
                 <div class="app-main__outer">
                     {% block body %}
                     {% endblock %}
@@ -33,5 +35,5 @@
         </div>
     </body>
     <div class="app-drawer-overlay d-none animated fadeIn"></div>
-<script type="text/javascript" src="http://localhost/TP_PW/public/assets/scripts/main.8d288f825d8dffbbe55e.js"></script>
+<script type="text/javascript" src="http://localhost/PDO_Messagerie/public/assets/scripts/main.8d288f825d8dffbbe55e.js"></script>
 </html>

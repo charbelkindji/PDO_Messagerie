@@ -8,7 +8,7 @@ if(!isset($_SESSION))
 use \Core\View;
 use App\Models\AdminModel;
 /**
- * AdminModel controller
+ * Admin controller
  *
  * PHP version 7.0
  */
@@ -29,6 +29,11 @@ class Admin extends \Core\Controller
         $error = isset($_SESSION['error']) ? $_SESSION['error'] :  "";
         unset($_SESSION['error']);
         View::renderTemplate('Admin/list.html.twig', array(
+            // Pour afficher les infos dans le header
+            'nomConnected' => $_SESSION['nom'],
+            'prenomConnected' => $_SESSION['prenom'],
+            'nomComConnected' => $_SESSION['nomcom'],
+            'connected' => true, // pour afficher menu et header
             'admins' => AdminModel::getAll(),
             'messageError' => $error
         ));
@@ -42,6 +47,11 @@ class Admin extends \Core\Controller
     public function contactAction()
     {
         View::renderTemplate('Admin/contact.html.twig', array(
+            // Pour afficher les infos dans le header
+            'nomConnected' => $_SESSION['nom'],
+            'prenomConnected' => $_SESSION['prenom'],
+            'nomComConnected' => $_SESSION['nomcom'],
+            'connected' => true, // pour afficher menu et header
             'admins' => AdminModel::getAll(),
         ));
     }
@@ -76,10 +86,15 @@ class Admin extends \Core\Controller
                 if($result)
                 {
                     $_SESSION['succes'] = "Administrateur enregistré avec succès !";
-                    header('Location: http://localhost/TP_PW/public/admin/ajouter');
+                    header('Location: http://localhost/PDO_Messagerie/public/admin/ajouter');
                 }else
                 {
                     View::renderTemplate('Admin/add.html.twig', array(
+                        // Pour afficher les infos dans le header
+                        'nomConnected' => $_SESSION['nom'],
+                        'prenomConnected' => $_SESSION['prenom'],
+                        'nomComConnected' => $_SESSION['nomcom'],
+                        'connected' => true, // pour afficher menu et header
                         'admin' => $admin,
                         'error' => 'Une erreur est survenue lors de l\'enregistrement. Veuillez réessayer.'
                     ));
@@ -92,6 +107,11 @@ class Admin extends \Core\Controller
         unset($_SESSION['succes']);
 
         View::renderTemplate('Admin/add.html.twig', array(
+            // Pour afficher les infos dans le header
+            'nomConnected' => $_SESSION['nom'],
+            'prenomConnected' => $_SESSION['prenom'],
+            'nomComConnected' => $_SESSION['nomcom'],
+            'connected' => true, // pour afficher menu et header
             'admin' => $admin,
             'messageSucces' => $succes,
             'errors' => $errors
@@ -135,10 +155,15 @@ class Admin extends \Core\Controller
                 {
                     $_SESSION['succes'] = "Administrateur modifié avec succès !";
                     unset($_SESSION['adminEdit']);
-                    header('Location: http://localhost/TP_PW/public/admin/index');
+                    header('Location: http://localhost/PDO_Messagerie/public/admin/index');
                 }else
                 {
                     View::renderTemplate('Admin/edit.html.twig', array(
+                        // Pour afficher les infos dans le header
+                        'nomConnected' => $_SESSION['nom'],
+                        'prenomConnected' => $_SESSION['prenom'],
+                        'nomComConnected' => $_SESSION['nomcom'],
+                        'connected' => true, // pour afficher menu et header
                         'admin' => $admin,
                         'error' => 'Une erreur est survenue lors de l\'enregistrement. Veuillez réessayer.'
                     ));
@@ -148,6 +173,11 @@ class Admin extends \Core\Controller
             }
 
             View::renderTemplate('Admin/edit.html.twig', array(
+                // Pour afficher les infos dans le header
+                'nomConnected' => $_SESSION['nom'],
+                'prenomConnected' => $_SESSION['prenom'],
+                'nomComConnected' => $_SESSION['nomcom'],
+                'connected' => true, // pour afficher menu et header
                 'admin' => $admin,
                 'errors' => $errors,
                 'editForm' => true,
@@ -173,7 +203,7 @@ class Admin extends \Core\Controller
                 if($adminDB == null)
                 {
                     $_SESSION['error'] = "Administrateur introuvable. Veuillez rééssayer.";
-                    header('Location: http://localhost/TP_PW/public/admin/liste');
+                    header('Location: http://localhost/PDO_Messagerie/public/admin/liste');
 
                 }
                 // Stocker dans une variable de session pour  ne pas avoir à exécuter une requête à chaque chargement de page
@@ -186,6 +216,11 @@ class Admin extends \Core\Controller
             }
 
             View::renderTemplate('Admin/edit.html.twig', array(
+                // Pour afficher les infos dans le header
+                'nomConnected' => $_SESSION['nom'],
+                'prenomConnected' => $_SESSION['prenom'],
+                'nomComConnected' => $_SESSION['nomcom'],
+                'connected' => true, // pour afficher menu et header
                 'admin' => $adminDB,
                 'errors' => $errors,
                 'editForm' => true,

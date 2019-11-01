@@ -1,0 +1,63 @@
+{% if errors is defined and errors is not empty %}
+    <div class="alert alert-danger alert-dismissible">
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if client is null %}
+    <div class="alert alert-danger alert-dismissible">
+        <p>Client introuvable. Veuillez rééssayer.</p>
+    </div>
+{% endif %}
+
+{% if messageSucces is defined and messageSucces is not empty %}
+    <div class="alert alert-success alert-dismissible">
+        {{ messageSucces }}
+    </div>
+{% endif %}
+
+<form class="" method="post">
+    <div class="position-relative form-group">
+        <label for="nom" class="">Nom</label>
+        <input name="nom" value="{% if client.nom is not empty %}{{ client.nom }}{% endif %}" id="nom" type="text" class="form-control">
+    </div>
+    <div class="position-relative form-group">
+        <label for="prenom" class="">Prénom</label>
+        <input name="prenom" value="{% if client.prenom is not empty %}{{ client.prenom }}{% endif %}" id="prenom" type="text" class="form-control">
+    </div>
+    <div class="position-relative form-group">
+        <label for="email" class="">Email</label>
+        <input name="email" {% if editForm is defined %}{{ "readonly" }}{% endif %} value="aaa@gmail.com" id="email" placeholder="Ex : nom.prenom@parter.com" type="email" class="form-control">
+        {#<input name="email" {% if editForm is defined %}{{ "read-only" }}{% endif %} value="{% if client.email is not empty %}{{ client.email }}{% endif %}" id="email" placeholder="Ex : nom.prenom@parter.com" type="email" class="form-control">#}
+    </div>
+    <div class="position-relative form-group">
+        <label for="motdepasse" class="">Mot de passe</label>
+        <input name="motdepasse" value="{% if client.motdepasse is not empty %}{{ client.motdepasse }}{% endif %}" id="motdepasse" placeholder="Mot de passe" type="password" class="form-control">
+    </div>
+    <div class="position-relative form-group">
+        <label for="nomcom" class="">Nom commercial</label>
+        <input name="nomcom" value="{% if client.nomcom is not empty %}{{ client.nomcom }}{% endif %}" id="nomcom" type="text" class="form-control">
+    </div>
+    <div class="position-relative form-group">
+        <label for="tel" class="">Téléphone</label>
+        <input name="tel" value="+330648471565" id="tel" type="text" class="form-control">
+        {#<input name="tel" value="{% if client.tel is not empty %}{{ client.tel }}{% endif %}" id="tel" type="text" class="form-control">#}
+    </div>
+    <div class="position-relative form-group">
+        <label for="adresse" class="">Adresse</label>
+        <input name="adresse" value="{% if client.adresse is not empty %}{{ client.adresse }}{% endif %}" id="adresse" type="text" class="form-control">
+    </div>
+    <div class="position-relative form-group">
+        <label for="cp" class="">Code postal</label>
+        <input name="cp" value="{% if client.cp is not empty %}{{ client.cp }}{% endif %}" id="cp" type="text" class="form-control">
+    </div>
+    <div class="position-relative form-group">
+        <label for="ville" class="">Ville</label>
+        <input name="ville" value="{% if client.ville is not empty %}{{ client.ville }}{% endif %}" id="ville" type="text" class="form-control">
+    </div>
+    <button class="mt-1 btn btn-primary">Inscription</button>
+</form>

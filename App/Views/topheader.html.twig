@@ -40,6 +40,8 @@
 
 
             <!-- deb log-->
+            {% if nomConnected is defined and prenomConnected is defined and nomComConnected is defined %}
+
             <div class="header-btn-lg pr-0">
                 <div class="widget-content p-0">
                     <div class="widget-content-wrapper">
@@ -51,34 +53,34 @@
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true"
                                      class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-menu-header">
-                                        <div class="dropdown-menu-header-inner bg-info">
-                                            <div class="menu-header-image opacity-2"
-                                                 style="background-image: url('assets/images/dropdown-header/city3.jpg');"></div>
-                                            <div class="menu-header-content text-left">
-                                                <div class="widget-content p-0">
-                                                    <div class="widget-content-wrapper">
-                                                        <div class="widget-content-left mr-3">
-                                                            <img width="42" class="rounded-circle"
-                                                                 src="assets/images/avatars/0.jpg"
-                                                                 alt="">
-                                                        </div>
-                                                        <div class="widget-content-left">
-                                                            <div class="widget-heading">Prénom Nom
+                                        <div class="dropdown-menu-header">
+                                            <div class="dropdown-menu-header-inner bg-info">
+                                                <div class="menu-header-image opacity-2"
+                                                     style="background-image: url('assets/images/dropdown-header/city3.jpg');"></div>
+                                                <div class="menu-header-content text-left">
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <img width="42" class="rounded-circle"
+                                                                     src="assets/images/avatars/0.jpg"
+                                                                     alt="">
                                                             </div>
-                                                            <div class="widget-subheading opacity-8">Prénom Nom
+                                                            <div class="widget-content-left">
+                                                                <div class="widget-heading">{{ nomConnected ~ " " ~ prenomConnected }}
+                                                                </div>
+                                                                <div class="widget-subheading opacity-8">{{ nomConnected ~ " " ~ prenomConnected }}
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="widget-content-right mr-2">
-                                                            <button class="btn-pill btn-shadow btn-shine btn btn-focus">
-                                                                <a href="deconnexion.php"<font style="color: #ffffff;">Déconnexion</a></font>
-                                                            </button>
+                                                            <div class="widget-content-right mr-2">
+                                                                <button class="btn-pill btn-shadow btn-shine btn btn-focus">
+                                                                    <a href="deconnexion.php"<font style="color: #ffffff;">Déconnexion</a></font>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     <div class="scroll-area-xs" style="height: 150px;">
                                         <div class="scrollbar-container ps">
                                             <ul class="nav flex-column">
@@ -145,18 +147,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="widget-content-left  ml-3 header-user-info">
-                            <div class="widget-heading">
-                                Prénom Nom
+                            <div class="widget-content-left  ml-3 header-user-info">
+                                <div class="widget-heading">
+                                    {{ nomConnected ~ " " ~ prenomConnected }}
+                                </div>
+                                <div class="widget-subheading">
+                                    {{ nomComConnected }}
+                                </div>
                             </div>
-                            <div class="widget-subheading">
-                                Nom de ma société
-                            </div>
-                        </div>
 
                     </div>
                 </div>
             </div>
+            {% endif %}
+
             <!-- end log-->
             <div class="header-btn-lg">
                 <button type="button" class="hamburger hamburger--elastic open-right-drawer">

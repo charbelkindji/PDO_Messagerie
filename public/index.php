@@ -30,9 +30,14 @@ $router->add('', ['controller' => 'Home', 'action' => 'index']);
 $router->add('{controller}/{action}');
 
 // AdminModel
-$router->add('admin/ajouter');
+$router->add('admin/ajouter', ['controller' => 'Admin', 'action' => 'ajouter']);
 $router->add('admin/index');
 $router->add('admin/modifier/{id:\d+}', ['controller' => 'Admin', 'action' => 'modifier']);
-$router->add('contact', ['controller' => 'AdminModel', 'action' => 'index']);
+$router->add('contact', ['controller' => 'Admin', 'action' => 'index']);
+
+// Client
+$router->add('client/ajouter', ['controller' => 'Client', 'action' => 'ajouter']);
+$router->add('client/connexion', ['controller' => 'Client', 'action' => 'connexion']);
+
 
 $router->dispatch($_SERVER['QUERY_STRING']);
