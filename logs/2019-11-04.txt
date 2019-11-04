@@ -1,0 +1,359 @@
+[04-Nov-2019 08:14:14 UTC] Uncaught exception: 'Exception' with message 'Method connexioAction not found in controller App\Controllers\Admin'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\Core\Router.php(121): Core\Controller->__call('connexio', Array)
+#1 C:\wamp64\www\PDO_Messagerie\public\index.php(53): Core\Router->dispatch('admin/connexio')
+#2 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Controller.php' on line 52
+[04-Nov-2019 08:14:14 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "base.html" (looked into: C:\wamp64\www\PDO_Messagerie/App/Views) in "500.html" at line 1. in C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Loader\FilesystemLoader.php:250
+Stack trace:
+#0 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Loader\FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('base.html')
+#1 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('base.html')
+#2 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Environment.php(381): Twig\Environment->getTemplateClass('base.html')
+#3 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Template.php(335): Twig\Environment->loadTemplate('base.html', NULL)
+#4 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Environment.php(418) : eval()'d code(42): Twig\Template->loadTemplate('base.html', '500.html', 1)
+#5 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Template.php(407): __TwigTemplate_da47bac31d27e55562aed2 in C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Loader\FilesystemLoader.php on line 250
+[04-Nov-2019 08:16:06 UTC] Uncaught exception: 'Exception' with message 'Method connexioAction not found in controller App\Controllers\Admin'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\Core\Router.php(121): Core\Controller->__call('connexio', Array)
+#1 C:\wamp64\www\PDO_Messagerie\public\index.php(53): Core\Router->dispatch('admin/connexio')
+#2 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Controller.php' on line 52
+[04-Nov-2019 08:16:06 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "500.html" (looked into: C:\wamp64\www\PDO_Messagerie/App/Views). in C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Loader\FilesystemLoader.php:250
+Stack trace:
+#0 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Loader\FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('500.html')
+#1 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('500.html')
+#2 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Environment.php(381): Twig\Environment->getTemplateClass('500.html')
+#3 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Environment.php(359): Twig\Environment->loadTemplate('500.html')
+#4 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Environment.php(318): Twig\Environment->load('500.html')
+#5 C:\wamp64\www\PDO_Messagerie\Core\View.php(51): Twig\Environment->render('500.html', Array)
+#6 C:\wamp64\www\PDO_Messagerie\Core\Error.php(63): Core\View::renderTemplate('500.html in C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Loader\FilesystemLoader.php on line 250
+[04-Nov-2019 08:16:53 UTC] Uncaught exception: 'Exception' with message 'Method connexioAction not found in controller App\Controllers\Admin'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\Core\Router.php(121): Core\Controller->__call('connexio', Array)
+#1 C:\wamp64\www\PDO_Messagerie\public\index.php(53): Core\Router->dispatch('admin/connexio')
+#2 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Controller.php' on line 52
+[04-Nov-2019 08:16:53 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "base.html" (looked into: C:\wamp64\www\PDO_Messagerie/App/Views) in "500.html" at line 1. in C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Loader\FilesystemLoader.php:250
+Stack trace:
+#0 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Loader\FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('base.html')
+#1 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('base.html')
+#2 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Environment.php(381): Twig\Environment->getTemplateClass('base.html')
+#3 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Template.php(335): Twig\Environment->loadTemplate('base.html', NULL)
+#4 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Environment.php(418) : eval()'d code(42): Twig\Template->loadTemplate('base.html', '500.html', 1)
+#5 C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Template.php(407): __TwigTemplate_da47bac31d27e55562aed2 in C:\wamp64\www\PDO_Messagerie\vendor\twig\twig\src\Loader\FilesystemLoader.php on line 250
+[04-Nov-2019 08:17:04 UTC] Uncaught exception: 'Exception' with message 'Method connexioAction not found in controller App\Controllers\Admin'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\Core\Router.php(121): Core\Controller->__call('connexio', Array)
+#1 C:\wamp64\www\PDO_Messagerie\public\index.php(53): Core\Router->dispatch('admin/connexio')
+#2 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Controller.php' on line 52
+[04-Nov-2019 08:19:49 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/connexio')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:19:51 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/connexio')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:26:36 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/connexio')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:26:36 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:26:37 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:26:44 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:26:44 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:27:30 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/connexio')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:27:30 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:27:30 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:27:57 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/connexio')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:27:57 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:28:02 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:28:02 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:28:27 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:29:16 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/connexio')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:29:19 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:29:19 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:29:37 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/connexio')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:29:48 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/connexio')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:29:50 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:29:50 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:30:02 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/connexio')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:30:02 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:30:04 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/connexio')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:30:04 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:30:58 UTC] Uncaught exception: 'Exception' with message 'Method indexAction not found in controller App\Controllers\Client'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\Core\Router.php(121): Core\Controller->__call('index', Array)
+#1 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/liste')
+#2 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Controller.php' on line 52
+[04-Nov-2019 08:31:03 UTC] Uncaught exception: 'Exception' with message 'Method indexAction not found in controller App\Controllers\Client'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\Core\Router.php(121): Core\Controller->__call('index', Array)
+#1 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/liste')
+#2 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Controller.php' on line 52
+[04-Nov-2019 08:32:04 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/list')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:32:04 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:32:26 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/list')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:32:26 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/css/erro...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:32:30 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/css/erro...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:32:30 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/css/erro...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:32:35 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/list')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:43:03 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('support/assets/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:43:47 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/assets/i...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:43:47 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/assets/i...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:43:50 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:43:50 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:49:13 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('support/assets/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:49:18 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('support/assets/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:49:42 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:49:42 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:49:44 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/assets/i...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:49:44 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/assets/i...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:49:51 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:49:51 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:49:54 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/assets/i...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:49:54 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/assets/i...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:50:00 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:50:00 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:50:02 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:50:02 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:50:05 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('support/assets/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:50:41 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:50:48 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/assets/i...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:50:48 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('client/assets/i...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:50:51 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:50:51 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/a...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:51:36 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('support/assets/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:54:07 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/z')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:54:07 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:55:19 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/z')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:55:19 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/s...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:55:19 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:55:22 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/s...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:55:22 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:55:22 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/s...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:56:39 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/z')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:56:39 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/p...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:56:42 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/z')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:57:00 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('support/assets/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:57:03 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/z')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:57:06 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:57:06 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('css/errorpages/...')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 08:59:29 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/z')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130
+[04-Nov-2019 09:00:01 UTC] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\wamp64\www\PDO_Messagerie\public\index.php(52): Core\Router->dispatch('admin/support/z')
+#1 {main}
+Thrown in 'C:\wamp64\www\PDO_Messagerie\Core\Router.php' on line 130

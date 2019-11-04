@@ -24,11 +24,10 @@ set_exception_handler('Core\Error::exceptionHandler');
  * Routing
  */
 $router = new Core\Router();
-
-// Add the routes
-$router->add('', ['controller' => 'Home', 'action' => 'index']);
-$router->add('{controller}/{action}');
-
+//////////
+// ROUTES
+/////////
+///
 // AdminModel
 $router->add('admin/ajouter', ['controller' => 'Admin', 'action' => 'ajouter']);
 $router->add('admin/connexion', ['controller' => 'Admin', 'action' => 'connexion']);
@@ -38,7 +37,7 @@ $router->add('admin/deconnexion', ['controller' => 'Admin', 'action' => 'deconne
 $router->add('contact', ['controller' => 'Client', 'action' => 'contact']);
 
 // Client
-$router->add('client/liste', ['controller' => 'Client', 'action' => 'index']);
+$router->add('client/liste', ['controller' => 'Client', 'action' => 'liste']);
 $router->add('client/ajouter', ['controller' => 'Client', 'action' => 'ajouter']);
 $router->add('client/connexion', ['controller' => 'Client', 'action' => 'connexion']);
 $router->add('client/deconnexion', ['controller' => 'Client', 'action' => 'deconnexion']);
