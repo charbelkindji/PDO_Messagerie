@@ -11,12 +11,6 @@ use PDO;
  */
 class ClientModel extends \Core\Model
 {
-
-    const PASSWORD_HASH_OPTIONS = [
-        'cost' => 12,
-    ];
-
-
     private $nom;
     private $prenom;
     private $email;
@@ -27,6 +21,10 @@ class ClientModel extends \Core\Model
     private $adresse;
     private $cp;
     private $ville;
+
+    ////////////////////////
+    /// GETTERS ET SETTERS
+    ////////////////////////
 
     /**
      * @return mixed
@@ -189,6 +187,11 @@ class ClientModel extends \Core\Model
     }
 
 
+    ////////////////////////
+    /// AUTRES METHODES
+    ////////////////////////
+
+
     /**
      * Add admin to database
      */
@@ -237,15 +240,13 @@ class ClientModel extends \Core\Model
     }
 
     /**
-     * Get admin based on id
+     * Gère la connexion en récupérant les infos associées aux infos de login saisies
      */
     public function connexion()
     {
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM coc_client WHERE COC_CLIENT_email = :email AND COC_CLIENT_motdepasse = :motdepasse");
 
-//        var_dump(sha1($this->motdepasse));
-//        var_dump($this->email);
         $stmt->execute(array(
             'email' => $this->email,
             'motdepasse' => sha1($this->motdepasse),

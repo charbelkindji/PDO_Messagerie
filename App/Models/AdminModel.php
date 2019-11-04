@@ -19,6 +19,11 @@ class AdminModel extends \Core\Model
     private $statut;
     private $correspondant;
 
+    ////////////////////////
+    /// GETTERS ET SETTERS
+    ////////////////////////
+
+
     /**
      * @return mixed
      */
@@ -115,6 +120,10 @@ class AdminModel extends \Core\Model
         $this->correspondant = $correspondant;
     }
 
+    ////////////////////////
+    /// AUTRES METHODES
+    ////////////////////////
+
 
     /**
      * Get all the admins as an associative array
@@ -189,15 +198,13 @@ class AdminModel extends \Core\Model
     }
 
     /**
-     * Get admin based on id
+     * Gère la connexion en récupérant les infos associées aux infos de login saisies
      */
     public function connexion()
     {
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM coc_admin WHERE COC_ADMIN_email = :email AND COC_ADMIN_motdepasse = :motdepasse");
 
-//        var_dump(sha1($this->motdepasse));
-//        var_dump($this->email);
         $stmt->execute(array(
             'email' => $this->email,
             'motdepasse' => sha1($this->motdepasse),

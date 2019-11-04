@@ -2,20 +2,19 @@
 
 <script lang="js">
 
+    // Charger les nouveaux messages.
     // function LoadNewMessages() {
     //     $.ajax({
     //         url: 'support/newMessages',
     //         success: function(data) {
     //             console.log(data);
-    //             // do something with the return value here if you like
+    //
     //         }
     //     });
-    //     setTimeout(LoadNewMessages, 5000); // you could choose not to continue on failure...
+    //     setTimeout(LoadNewMessages, 5000);
     // }
-    //
-    //
-    $(document).ready(function() {
 
+    $(document).ready(function() {
 
         // setTimeout(LoadNewMessages, 5000);
 
@@ -44,24 +43,25 @@
                     .done(function(data) {
 
                         // Tout va bien. On affiche le message envoyé dans la zone de texte
-                        $('#chat-wrapper').append('<div class="float-right">'+
-                            '<div class="chat-box-wrapper chat-box-wrapper-right">'+
-                            '<div>'+
-                            '<div class="chat-box">' + data.message + ' </div>'+
-                            '<small class="opacity-6">'+
-                            '<i class="fa fa-calendar-alt mr-1"></i>'+
-                                data.date +
-                            '</small>'+
-                            '</div>'+
-                            '<div>'+
-                            '<div class="avatar-icon-wrapper ml-1">'+
-                            '<div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>'+
-                            '<div class="avatar-icon avatar-icon-lg rounded"><img'+
-                        'src="http://localhost/PDO_Messagerie/public/assets/images/avatars/avatar.png" alt=""></div>'+
-                            '</div>'+
-                            '</div>'+
-                            '</div>'+
-                            '</div> <div style="height: 5px; clear: right;"></div>');
+                        $('#chat-wrapper').append(
+                            '<div class="float-right">'+
+                                '<div class="chat-box-wrapper chat-box-wrapper-right">'+
+                                    '<div>'+
+                                        '<div class="chat-box">' + data.message + ' </div>'+
+                                        '<small class="opacity-6">'+
+                                        '<i class="fa fa-calendar-alt mr-1"></i>'+
+                                            data.date +
+                                        '</small>'+
+                                    '</div>'+
+                                    '<div>'+
+                                        '<div class="avatar-icon-wrapper ml-1">'+
+                                            '<div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>'+
+                                            '<div class="avatar-icon avatar-icon-lg rounded"><img src="http://localhost/PDO_Messagerie/public/assets/images/avatars/avatar.png" alt="">' +
+                                        '</div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div><div style="height: 5px; clear: right;"></div>');
 
                         // Vider le champ de saisie de message
                         $('input[name=message]').val("");

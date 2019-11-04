@@ -20,6 +20,11 @@ class SupportModel extends \Core\Model
     private $statutexp;
     private $statutdest;
 
+    ////////////////////////
+    /// GETTERS ET SETTERS
+    ////////////////////////
+
+
     /**
      * @return mixed
      */
@@ -148,6 +153,10 @@ class SupportModel extends \Core\Model
         $this->statutdest = $statutdest;
     }
 
+    ////////////////////////
+    /// AUTRES METHODES
+    ////////////////////////
+
     // Récupérer tous les messages échangés entre un admin et un client donné
     public function getSupportMessages($idAdmin, $idClient)
     {
@@ -159,8 +168,6 @@ class SupportModel extends \Core\Model
                               AND coc_admin.COC_ADMIN_id = :idAdmin
                               ORDER BY date ASC");
 
-//        var_dump($idAdmin);
-//        var_dump($idClient);
 
         // Messages venant du client vers l'admin ou de l'admin vers le client
         $stmt->execute(array(
@@ -185,13 +192,6 @@ class SupportModel extends \Core\Model
                               OR (coc_support.idexp = :idexp2 AND coc_support.iddest = :iddest2))
                               AND coc_client.COC_CLIENT_id = :idClient
                               ORDER BY date ASC");
-
-        // todo remove
-        // Définir valeur en dur pour les tests des échanges
-//        $idAdmin = 1;
-//        $idClient = 6;
-//        var_dump($idAdmin);
-//        var_dump($idClient);
 
         // Messages venant du client vers l'admin ou de l'admin vers le client
         $stmt->execute(array(
@@ -228,14 +228,6 @@ class SupportModel extends \Core\Model
                               :statutexp,
                               :statutdest)
                               ");
-//        var_dump($this->typeexp);
-//        var_dump($this->idexp);
-//        var_dump($this->typedesti);
-//        var_dump($this->message);
-//        var_dump($this->iddest);
-//        var_dump($this->date);
-//        var_dump($this->statutexp);
-//        var_dump($this->statutdest);
 
 
         return $stmt->execute(array(

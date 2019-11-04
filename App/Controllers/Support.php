@@ -40,9 +40,6 @@ class Support extends \Core\Controller
         $support = new SupportModel();
         $messages = $support->getSupportMessages($idAdmin, $_SESSION['idClient']);
 
-//        var_dump($messages);
-//        die();
-
         // Si messages est vide, récupérer au moins le nom du client pour l'afficher dans l'entête de la messagerie
         $nomAdmin = "";
         if(empty($messages))
@@ -81,10 +78,6 @@ class Support extends \Core\Controller
 
         $support = new SupportModel();
         $messages = $support->getSupportMessagesAdmin($_SESSION['idAdmin'], $idClient);
-
-//        var_dump($messages);
-//        die();
-
 
         // Si messages est vide, récupérer au moins le nom du client pour l'afficher dans l'entête de la messagerie
         $nomClient = "";

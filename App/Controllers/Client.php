@@ -41,8 +41,6 @@ class Client extends \Core\Controller
 
     public function listeAction()
     {
-//        var_dump($_SESSION['idAdmin']);
-//        die();
         // Event    uelles erreurs à afficher des suites d'un header depuis une autre page
         $error = isset($_SESSION['error']) ? $_SESSION['error'] :  "";
         unset($_SESSION['error']);
@@ -67,6 +65,7 @@ class Client extends \Core\Controller
     public function deconnexionAction()
     {
         session_destroy();
+        $_SESSION = [];
         $this->connexionAction();
     }
 
@@ -79,7 +78,7 @@ class Client extends \Core\Controller
         // S'il est déjà connecté
         if(isset($_SESSION['idClient']))
         {
-            header('Location: http://localhost/PDO_Messagerie/public/admin/contact');
+            header('Location: http://localhost/PDO_Messagerie/public/contact');
             return false;
         }
 
@@ -98,9 +97,6 @@ class Client extends \Core\Controller
             /** @var ClientModel $client */
             $resultat = $client->connexion();
 
-//            var_dump($resultat);
-//            var_dump(sha1($client->getMotdepasse()));
-//            die();
             if($resultat != null)
             {
                 // Stocker les informations du client connecté dans la session

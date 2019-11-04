@@ -39,6 +39,7 @@ class Admin extends \Core\Controller
     public function deconnexionAction()
     {
         session_destroy();
+        $_SESSION = [];
         $this->connexionAction();
     }
 
@@ -51,7 +52,7 @@ class Admin extends \Core\Controller
         // S'il est déjà connecté
         if(isset($_SESSION['idAdmin']))
         {
-            header('Location: http://localhost/PDO_Messagerie/public/admin/contact');
+            header('Location: http://localhost/PDO_Messagerie/public/client/liste');
             return false;
         }
 
@@ -70,9 +71,6 @@ class Admin extends \Core\Controller
             /** @var AdminModel $admin */
             $resultat = $admin->connexion();
 
-//            var_dump($resultat);
-//            var_dump(sha1($admin->getMotdepasse()));
-//            die();
             if($resultat != null)
             {
                 // Stocker les informations du client connecté dans la session
@@ -153,6 +151,8 @@ class Admin extends \Core\Controller
 
             // Contrôles
             $errors = $this->controlValues($admin);
+
+
             if(empty($errors))
             {
                 // Insertion en base de données
@@ -276,10 +276,9 @@ class Admin extends \Core\Controller
 
         }else
         {
-
 //            unset($_SESSION['adminEdit']);
 //            exit(0);
-//
+
             if(!isset($_SESSION['adminEdit']))
             {
                 /** @var AdminModel $adminDB */
@@ -290,7 +289,6 @@ class Admin extends \Core\Controller
                 $adminDB->setMotdepasse($resultat['COC_ADMIN_motdepasse']);
                 $adminDB->setCorrespondant($resultat['COC_ADMIN_correspondant']);
 
-//                var_dump($adminDB);
                 if($adminDB == null)
                 {
                     $_SESSION['error'] = "Administrateur introuvable. Veuillez rééssayer.";
@@ -303,8 +301,6 @@ class Admin extends \Core\Controller
 
 
             }
-//            var_dump($adminDB);
-//            exit(0);
 
             View::renderTemplate('Admin/edit.html.twig', array(
                 // Pour afficher les infos dans le header
@@ -328,7 +324,7 @@ class Admin extends \Core\Controller
     }
 
     /**
-     * @param Admin $admin
+     * @param AdminModel $admin
      * @return array
      */
     public function controlValues($admin)

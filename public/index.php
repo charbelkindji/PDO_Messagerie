@@ -34,6 +34,7 @@ $router->add('admin/ajouter', ['controller' => 'Admin', 'action' => 'ajouter']);
 $router->add('admin/connexion', ['controller' => 'Admin', 'action' => 'connexion']);
 $router->add('admin/index');
 $router->add('admin/modifier/{id:\d+}', ['controller' => 'Admin', 'action' => 'modifier']);
+$router->add('admin/deconnexion', ['controller' => 'Admin', 'action' => 'deconnexion']);
 $router->add('contact', ['controller' => 'Client', 'action' => 'contact']);
 
 // Client
